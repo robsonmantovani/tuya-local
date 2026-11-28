@@ -3,6 +3,8 @@ products:
   - id: jexpyxmyl0gubapl
     manufacturer: Tongou
     model: TO-Q-ST463JWT 4P
+  - id: zthvmzekju172q3b
+    manufacturer: Tongou
 entities:
   - entity: switch
     dps:
@@ -262,3 +264,27 @@ entities:
         type: bitfield
         name: fault_code
         optional: true
+  - entity: select
+    translation_key: initial_state
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 101
+        type: string
+        name: option
+        optional: true
+        mapping:
+          - dps_val: "off"
+            value: "off"
+          - dps_val: "on"
+            value: "on"
+          - dps_val: "memory"
+            value: "memory"
+      - id: 101
+        type: string
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
