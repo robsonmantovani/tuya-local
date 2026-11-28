@@ -2,6 +2,8 @@ name: Door opener
 products:
   - id: saj1whzshyomlsau
     manufacturer: AGL
+# Note: Some firmware also reports dps 113 and 115, which are not exposed
+# anywhere in the app and have no known meaning.
 entities:
   - entity: cover
     class: door
@@ -94,3 +96,75 @@ entities:
       - id: 112
         type: boolean
         name: sensor
+  - entity: switch
+    name: Contact open notification
+    icon: "mdi:message-alert"
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 104
+        type: boolean
+        name: switch
+        optional: true
+      - id: 104
+        type: boolean
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
+  - entity: switch
+    name: Contact closed notification
+    icon: "mdi:message-alert-outline"
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 105
+        type: boolean
+        name: switch
+        optional: true
+      - id: 105
+        type: boolean
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
+  - entity: switch
+    name: Power connected notification
+    icon: "mdi:power-plug"
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 114
+        type: boolean
+        name: switch
+        optional: true
+      - id: 114
+        type: boolean
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
+  - entity: switch
+    name: Contact open alarm
+    icon: "mdi:alarm-light"
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 106
+        type: boolean
+        name: switch
+        optional: true
+      - id: 106
+        type: boolean
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
