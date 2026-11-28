@@ -1,4 +1,7 @@
 name: Door opener
+products:
+  - id: saj1whzshyomlsau
+    manufacturer: AGL
 entities:
   - entity: cover
     class: door
@@ -59,6 +62,7 @@ entities:
     category: config
     name: Unlock duration
     icon: "mdi:lock-clock"
+    hidden: unavailable
     dps:
       - id: 107
         name: value
@@ -67,6 +71,15 @@ entities:
           min: 1
           max: 65
         unit: s
+        optional: true
+      - id: 107
+        name: available
+        type: integer
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
   - entity: binary_sensor
     name: Door opened
     category: diagnostic
