@@ -155,3 +155,20 @@ entities:
             value: low
           - dps_val: high
             value: high
+  - entity: sensor
+    name: Dustbin and water tank
+    class: enum
+    category: diagnostic
+    icon: "mdi:delete-variant"
+    dps:
+      - id: 103
+        type: string
+        name: sensor
+        optional: true
+        mapping:
+          - dps_val: fan_in
+            value: Dustbin only
+          - dps_val: fan_tank_in
+            value: Dustbin and water tank
+          - dps_val: fan_tank_none
+            value: None
