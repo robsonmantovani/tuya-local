@@ -288,3 +288,21 @@ entities:
           - dps_val: null
             value: false
           - value: true
+  - entity: switch
+    name: Maintenance lock
+    icon: "mdi:lock"
+    category: config
+    hidden: unavailable
+    dps:
+      - id: 36
+        type: boolean
+        name: switch
+        optional: true
+      - id: 36
+        type: boolean
+        name: available
+        optional: true
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
